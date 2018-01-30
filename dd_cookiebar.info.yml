@@ -1,0 +1,13 @@
+name: Cookiebar
+type: module
+description: Simple cookiebar that closes when close is pressed. Automatically assumes users consent when being closed.
+core: 8.x
+package: TamTam
+php: 5.6
+dependencies:
+  - components
+
+component-libraries:
+  dd_cookiebar:
+    paths:
+      - component

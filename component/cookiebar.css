@@ -1,0 +1,25 @@
+.c-cookiebar {
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 20 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    transform: translateY(100%);
+    transition: 400ms ease-in-out-quad;
+    transition-property: transform;
+}
+.c-cookiebar.cookiebar--is-visible {
+    transform: translateY(0);
+}
+
+.cookiebar__content {
+    display: flex;
+    align-items: center;
+}
+
+.cookiebar__button-close {
+    margin-left: auto;
+}

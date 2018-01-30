@@ -1,0 +1,61 @@
+<?php
+
+/**
+ * @file
+ * Contains dd_cookiebar.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function dd_cookiebar_help($route_name, RouteMatchInterface $route_match)
+{
+    switch ($route_name) {
+        // Main module help for the dd_cookiebar module.
+        case 'help.page.dd_cookiebar':
+            $output = '';
+            $output .= '<h3>' . t('About') . '</h3>';
+            $output .= '<p>' . t('Simple cookiebar that closes when close is pressed. Automatically assumes users consent when being closed.') . '</p>';
+
+            return $output;
+
+        default:
+    }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function dd_cookiebar_theme()
+{
+    return [
+        'dd_cookiebar' => [
+            'render element' => 'children',
+            'variables'      => [
+                'cookiebarText' => '',
+                'buttonText'    => '',
+            ]
+        ],
+    ];
+}
+
+/**
+ * Implements hook_page_bottom().
+ */
+function dd_cookiebar_page_bottom(array &$page_bottom)
+{
+    $page_bottom['cookiebar'] = [
+        '#theme'    => 'dd_cookiebar',
+        '#content'  => [
+            'cookiebarText' => 'Cookiebar text',
+            'buttonText'    => '',
+        ],
+        '#attached' => [
+            'library' => [
+                'dd_cookiebar/dd-cookiebar',
+            ]
+        ]
+    ];
+}

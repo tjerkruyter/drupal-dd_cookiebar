@@ -1,0 +1,22 @@
+{#
+    @shelf-version: 1.0.0
+    Cookiebar template
+
+    cookiebarText: 'string',
+    buttonText: 'string'
+#}
+<div class="c-cookiebar" js-hook-cookiebar>
+
+  <div class="cookiebar__content o-container">
+
+    <div class="cookiebar__text">
+      {% if cookiebarText %}{{ cookiebarText }}{% else %}Cookie content here{% endif %}
+    </div>
+
+    <button type="button" class="cookiebar__button-close" on:click="cookie::dismiss">
+      {% if buttonText %}buttonText{% else %}&#10005;{% endif %}
+    </button>
+
+  </div>
+
+</div>

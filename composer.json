@@ -1,0 +1,24 @@
+{
+  "name": "drupal/dd_cookiebar",
+  "type": "drupal-module",
+  "description": "Simple cookiebar that closes when close is pressed. Automatically assumes users consent when being closed.",
+  "keywords": [
+    "Drupal"
+  ],
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "PHP team",
+      "email": "php@tamtam.nl"
+    }
+  ],
+  "homepage": "https://www.tamtam.nl",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "php@tamtam.nl",
+    "source": "https://bitbucket.org/tamtam-nl/drupal-dd_cookiebar"
+  },
+  "require": {
+    "drupal/components": "~1.0"
+  }
+}
