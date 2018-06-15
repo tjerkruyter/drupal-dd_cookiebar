@@ -1,0 +1,7 @@
+dd_cookiebar.settings:
+  title: 'Dept cookiebar settings'
+  parent: user.admin_index
+  description: "Configuration settings for cookiebar"
+  weight: -8
+  route_name: dd_cookiebar.settings
+  menu_name: admin

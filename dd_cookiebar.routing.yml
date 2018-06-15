@@ -1,0 +1,7 @@
+dd_cookiebar.settings:
+  path: '/admin/config/people/dept-cookie-settings'
+  defaults:
+    _form: 'Drupal\dd_cookiebar\Form\CookieSettingsForm'
+    _title: 'Dept cookie settings'
+  requirements:
+    _permission: 'administer nodes'

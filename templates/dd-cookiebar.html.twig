@@ -1,4 +1,11 @@
+{% set cookieNid = template_nid('cookie') %}
+{% set cookieSettingUrl = cookieNid ? path('entity.node.canonical', {'node': cookieNid}) : '#' %}
+{% set cookieDocumentLink = drupal_config('dd_cookiebar.settings', 'documentLink') %}
+{% set cookieVersion = drupal_config('dd_cookiebar.settings', 'version') %}
+
 {% include '@dd_cookiebar/cookiebar.twig' with{
-  cookiebarText: content.cookiebarText,
-  buttonText: content.buttonText
+    cookiebarText: content.cookiebarText,
+    cookieVersion,
+    cookieSettingUrl,
+    cookieDocumentLink
 } %}

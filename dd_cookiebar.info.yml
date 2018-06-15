@@ -6,6 +6,9 @@ package: TamTam
 php: 5.6
 dependencies:
   - components
+  - template_nid
+  - twig_tweak
+  - svg_inject
 
 component-libraries:
   dd_cookiebar:

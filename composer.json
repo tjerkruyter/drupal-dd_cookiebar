@@ -19,6 +19,9 @@
     "source": "https://bitbucket.org/tamtam-nl/drupal-dd_cookiebar"
   },
   "require": {
-    "drupal/components": "~1.0"
+    "drupal/components": "~1.0",
+    "drupal/template_nid": "~1.0",
+    "drupal/twig_tweak": "~2.0",
+    "drupal/svg_inject": "~1.1"
   }
 }

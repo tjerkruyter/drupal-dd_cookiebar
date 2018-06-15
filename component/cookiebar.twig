@@ -3,19 +3,40 @@
     Cookiebar template
 
     cookiebarText: 'string',
-    buttonText: 'string'
+    cookieVersion: 'sstring'
+    cookieSettingUrl: 'string'
+    cookieDocumentLink: 'string'
 #}
-<div class="c-cookiebar" js-hook-cookiebar>
+{% from  '@dd_cookiebar/button.twig' import button %}
+<div class="c-cookie-bar" js-hook-cookies-bar data-version="{{ cookieVersion ? cookieVersion : '1.0' }}">
 
-  <div class="cookiebar__content o-container">
+  <div class="cookie-bar__content">
 
     <div class="cookiebar__text">
       {% if cookiebarText %}{{ cookiebarText }}{% else %}Cookie content here{% endif %}
     </div>
 
-    <button type="button" class="cookiebar__button-close" on:click="cookie::dismiss">
-      {% if buttonText %}buttonText{% else %}&#10005;{% endif %}
-    </button>
+
+    <div class="cookie-bar__button-holder">
+        {{ button( {
+            label: 'Change cookie settings'|t,
+            url: cookieSettingUrl,
+            class: 'cookie-bar__button',
+            size: 'small',
+            hook: 'cookies-settings-button'
+        } ) }}
+
+        {{ button( {
+            element: 'button',
+            type: 'button',
+            variant: 'primary',
+            label: 'I agree'|t,
+            class: 'cookie-bar__button',
+            attr: 'on:click="cookies::dismiss"',
+            size: 'small',
+            hook: 'cookies-dismiss'
+        } ) }}
+    </div>
 
   </div>
 

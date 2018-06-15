@@ -14,11 +14,12 @@ Provides frontend shelf [cookiebar component](https://bitbucket.org/tamtam-nl/ta
 1. If you have satis.tamtam.nl already available in your composer.json file go to step 2. Otherwise add [satis](https://satis.tamtam.nl/) to your composer.json with the following command:  
 `composer global config repositories.satis composer https://satis.tamtam.nl`
 2. Add dd_cookiebar to your project through:  
-`composer require drupal/dd_cookiebar:0.1.0`
+`composer require drupal/dd_cookiebar:1.0.0`
 3. Enable the module with
 `drush en dd_cookiebar -y` and the default cookiebar markup will be automatically available in the page_bottom variable (html.html.twig)
 4. Copy dd_cookiebar/templates/dd-cookiebar.html.twig to your own theme templates folder and override the defaults to your own preference. Alternatively you can override the variables in through the [hook\_page\_bottom](https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Render%21theme.api.php/function/hook_page_bottom/8.2.x)
-5. You can disable or extend the default component assets with the *.libraries.yml file for example by adding the following to your THEME.libraries.yml:
+5. If you goto /admin/config/people/dept-cookie-settings in the admin interface you can attach the correct cookie PDF and set the correct cookie version  
+6. You can disable or extend the default component assets with the *.libraries.yml file for example by adding the following to your THEME.libraries.yml:
 
 ```yaml
 dd-cookiebar:
@@ -32,3 +33,6 @@ dd-cookiebar:
 
 ### Frontend
 Please refer to the frontend [Readme.md](https://bitbucket.org/tamtam-nl/tamtam-frontend-shelf/src/e580d3cd0588402061388d6aaa96e74526a0cecf/components/cookiebar/simple/README.md?at=develop&fileviewer=file-view-default)
+
+### Optional step (config ignore)
+1. Please note the following optional step: install [config_ignore](https://www.drupal.org/project/config_ignore) and add `dd_cookiebar.settings.*` to the ignored config to prevent overriding on config import.
