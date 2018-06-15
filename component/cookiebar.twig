@@ -13,7 +13,11 @@
   <div class="cookie-bar__content">
 
     <div class="cookiebar__text">
-      {% if cookiebarText %}{{ cookiebarText }}{% else %}Cookie content here{% endif %}
+      {% if cookiebarText %}
+          {{ cookiebarText }}
+      {% else %}
+          {{'Cookie content here, <a href="@cookieDocumentLink" title="cookies" target="_blank">Read more</a>'|t({'@cookieDocumentLink' : cookieDocumentLink}) }}
+      {% endif %}
     </div>
 
 
